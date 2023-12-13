@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+                let message = document.querySelector('#message');
+                let free_message = document.querySelector('#free_message');
+                let ans1_button = document.querySelector('#ans1');
+                let ans2_button = document.querySelector('#ans2');
+                let ans3_button = document.querySelector('#ans3');
+                let ans4_button = document.querySelector('#ans4');
+                let ans5_button = document.querySelector('#ans5');
+
+                ans1.addEventListener('click', function(){
+                    ans1.style.backgroundColor = 'red';
+                    message.innerHTML = 'Incorrect';
+                })
+                ans2.addEventListener('click', function(){
+                    ans2.style.backgroundColor = 'red';
+                    message.innerHTML = 'Incorrect';
+                })
+                ans3.addEventListener('click', function(){
+                    ans3.style.backgroundColor = 'red';
+                    message.innerHTML = 'Incorrect';
+                })
+                ans4.addEventListener('click', function(){
+                    ans4.style.backgroundColor = 'red';
+                    message.innerHTML = 'Incorrect';
+                })
+                ans5.addEventListener('click', function(){
+                    ans5.style.backgroundColor = 'green';
+                    message.innerHTML = 'Correct';
+                })
+                document.querySelector('#validButton').addEventListener('click', function(){
+                    let text_answear = document.querySelector('#textAnswear');
+                    if (text_answear.value == 'Switzerland')
+                    {
+                        free_message.innerHTML = 'Correct';
+                        text_answear.style.color = 'green';
+                    }
+                    else
+                    {
+                        free_message.innerHTML = 'Incorect';
+                        text_answear.style.color = 'red';
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is approximate ratio of people to sheep in New Zeland?</h3>
+                <button id="ans1">6 people per 1 sheep</button>
+                <button id="ans2">3 people per 1 sheep</button>
+                <button id="ans3">1 person per 1 sheep</button>
+                <button id="ans4">1 person per 3 sheep</button>
+                <button id="ans5">1 person per 6 sheep</button>
+                <p id="message"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one quinea pig, as a lone guinea pig might get lonely?</h3>
+                <input type="text" id="textAnswear"><button id="validButton">Check Answear</button>
+                <p id="free_message"></p>
+            </div>
+        </div>
+    </body>
+</html>
